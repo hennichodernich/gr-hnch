@@ -1,0 +1,22 @@
+<block>
+  <name>Vec mat mult cc</name>
+  <key>hnch_vec_mat_mult_cc</key>
+  <category>hnch</category>
+  <import>import hnch</import>
+  <make>hnch.vec_mat_mult_cc($A)</make>
+  <param>
+    <name>A</name>
+    <key>A</key>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+    <vlen>len(${A}[0])</vlen>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+    <vlen>len($A)</vlen>
+  </source>
+</block>

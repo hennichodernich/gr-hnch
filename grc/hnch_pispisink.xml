@@ -1,0 +1,42 @@
+<block>
+  <name>Mysink</name>
+  <key>hnch_pispisink</key>
+  <category>hnch</category>
+  <flags>throttle</flags>
+  <import>import hnch</import>
+  <make>hnch.pispisink($spi_clock, $chunk_size, $bus_num, $device_num)</make>
+  <param>
+	  <name>SPI Clock</name>
+	  <key>spi_clock</key>
+	  <value>spi_clock</value>
+	  <type>int</type>
+  </param>
+  <param>
+	  <name>Chunk Size</name>
+	  <key>chunk_size</key>
+	  <value>512</value>
+	  <type>int</type>
+  </param>
+  <param>
+	  <name>SPI Bus Number</name>
+	  <key>bus_num</key>
+	  <value>0</value>
+	  <type>int</type>
+  </param>
+  <param>
+	  <name>SPI Device Number</name>
+	  <key>device_num</key>
+	  <value>1</value>
+	  <type>int</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+  <doc>
+	  SPI clock must be an even fraction of 250MHz.
+	  Maximum chunk size is 8192 (64k limit).
+	  Bus number usually is 0, Device number usually 1.
+  </doc>
+</block>

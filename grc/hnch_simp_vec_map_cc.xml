@@ -1,0 +1,27 @@
+<block>
+  <name>Simp vec map cc</name>
+  <key>hnch_simp_vec_map_cc</key>
+  <category>hnch</category>
+  <import>import hnch</import>
+  <make>hnch.simp_vec_map_cc($vlen_in, $mapping)</make>
+  <param>
+    <name>Input vector length</name>
+    <key>vlen_in</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Mapping</name>
+    <key>mapping</key>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+    <vlen>$vlen_in</vlen>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+    <vlen>len($mapping)</vlen>
+  </source>
+</block>
