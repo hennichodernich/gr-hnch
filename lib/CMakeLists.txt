@@ -29,6 +29,7 @@ list(APPEND hnch_sources
     simp_vec_map_cc_impl.cc
     vec_mat_mult_cc_impl.cc
     pispisink_impl.cc
+    pispisource_impl.cc
 )
 
 add_library(gnuradio-hnch SHARED ${hnch_sources})

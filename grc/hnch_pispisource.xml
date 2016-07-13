@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <block>
-  <name>PiSPI Sink</name>
-  <key>hnch_pispisink</key>
+  <name>PiSPI Source</name>
+  <key>hnch_pispisource</key>
   <category>hnch</category>
   <flags>throttle</flags>
   <import>import hnch</import>
-  <make>hnch.pispisink($spi_clock, $chunk_size, $bus_num, $device_num)</make>
+  <make>hnch.pispisource($spi_clock, $chunk_size, $bus_num, $device_num)</make>
   <param>
 	  <name>SPI Clock</name>
 	  <key>spi_clock</key>
@@ -31,13 +31,13 @@
 	  <type>int</type>
   </param>
 
-  <sink>
-    <name>in</name>
+  <source>
+    <name>out</name>
     <type>complex</type>
-  </sink>
+  </source>
   <doc>
 	  SPI clock must be an even fraction of 250MHz.
-	  Maximum chunk size is 8192 (64k limit).
+	  Maximum chunk size is 16384 (64k limit).
 	  Bus number usually is 0, Device number usually 1.
   </doc>
 </block>

@@ -18,8 +18,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_HNCH_MYSINK_IMPL_H
-#define INCLUDED_HNCH_MYSINK_IMPL_H
+#ifndef INCLUDED_HNCH_PISPISINK_IMPL_H
+#define INCLUDED_HNCH_PISPISINK_IMPL_H
 
 #include <hnch/pispisink.h>
 
@@ -55,5 +55,5 @@ namespace gr {
   } // namespace hnch
 } // namespace gr
 
-#endif /* INCLUDED_HNCH_MYSINK_IMPL_H */
+#endif /* INCLUDED_HNCH_PISPISINK_IMPL_H */
 

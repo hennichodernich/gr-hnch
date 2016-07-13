@@ -19,8 +19,8 @@
  */
 
 
-#ifndef INCLUDED_HNCH_PISPISINK_H
-#define INCLUDED_HNCH_PISPISINK_H
+#ifndef INCLUDED_HNCH_PISPISOURCE_H
+#define INCLUDED_HNCH_PISPISOURCE_H
 
 #include <hnch/api.h>
 #include <gnuradio/sync_block.h>
@@ -33,17 +33,17 @@ namespace gr {
      * \ingroup hnch
      *
      */
-    class HNCH_API pispisink : virtual public gr::sync_block
+    class HNCH_API pispisource : virtual public gr::sync_block
     {
      public:
-      typedef boost::shared_ptr<pispisink> sptr;
+      typedef boost::shared_ptr<pispisource> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of hnch::pispisink.
+       * \brief Return a shared_ptr to a new instance of hnch::pispisource.
        *
-       * To avoid accidental use of raw pointers, hnch::pispisink's
+       * To avoid accidental use of raw pointers, hnch::pispisource's
        * constructor is in a private implementation
-       * class. hnch::pispisink::make is the public interface for
+       * class. hnch::pispisource::make is the public interface for
        * creating new instances.
        */
       static sptr make(int spi_clock, int chunk_size, int bus_num, int device_num);
@@ -52,5 +52,5 @@ namespace gr {
   } // namespace hnch
 } // namespace gr
 
-#endif /* INCLUDED_HNCH_PISPISINK_H */
+#endif /* INCLUDED_HNCH_PISPISOURCE_H */
 

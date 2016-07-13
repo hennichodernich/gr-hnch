@@ -11,6 +11,7 @@
 #include "hnch/simp_vec_map_cc.h"
 #include "hnch/vec_mat_mult_cc.h"
 #include "hnch/pispisink.h"
+#include "hnch/pispisource.h"
 %}
 
 
@@ -20,3 +21,5 @@ GR_SWIG_BLOCK_MAGIC2(hnch, simp_vec_map_cc);
 GR_SWIG_BLOCK_MAGIC2(hnch, vec_mat_mult_cc);
 %include "hnch/pispisink.h"
 GR_SWIG_BLOCK_MAGIC2(hnch, pispisink);
+%include "hnch/pispisource.h"
+GR_SWIG_BLOCK_MAGIC2(hnch, pispisource);

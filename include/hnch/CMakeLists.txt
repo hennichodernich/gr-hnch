@@ -24,5 +24,6 @@ install(FILES
     api.h
     simp_vec_map_cc.h
     vec_mat_mult_cc.h
-    pispisink.h DESTINATION include/hnch
+    pispisink.h
+    pispisource.h DESTINATION include/hnch
 )

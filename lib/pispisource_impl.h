@@ -18,39 +18,39 @@
  * Boston, MA 02110-1301, USA.
  */
 
+#ifndef INCLUDED_HNCH_PISPISOURCE_IMPL_H
+#define INCLUDED_HNCH_PISPISOURCE_IMPL_H
 
-#ifndef INCLUDED_HNCH_PISPISINK_H
-#define INCLUDED_HNCH_PISPISINK_H
-
-#include <hnch/api.h>
-#include <gnuradio/sync_block.h>
+#include <hnch/pispisource.h>
 
 namespace gr {
   namespace hnch {
 
-    /*!
-     * \brief <+description of block+>
-     * \ingroup hnch
-     *
-     */
-    class HNCH_API pispisink : virtual public gr::sync_block
+    class pispisource_impl : public pispisource
     {
-     public:
-      typedef boost::shared_ptr<pispisink> sptr;
+	int         	d_spi_clock;
+	int		d_bus_num, d_device_num;
+	int         	d_fd;
+      	uint16_t	*d_buffer;
+      	uint16_t	*dummybuffer;
+      	int		d_chunk_size;
+	
+	struct spi_ioc_transfer transfer_struct;
+     private:
+      // Nothing to declare in this block.
 
-      /*!
-       * \brief Return a shared_ptr to a new instance of hnch::pispisink.
-       *
-       * To avoid accidental use of raw pointers, hnch::pispisink's
-       * constructor is in a private implementation
-       * class. hnch::pispisink::make is the public interface for
-       * creating new instances.
-       */
-      static sptr make(int spi_clock, int chunk_size, int bus_num, int device_num);
+     public:
+      pispisource_impl(int spi_clock, int chunk_size, int bus_num, int device_num);
+      ~pispisource_impl();
+
+      // Where all the action really happens
+      int work(int noutput_items,
+         gr_vector_const_void_star &input_items,
+         gr_vector_void_star &output_items);
     };
 
   } // namespace hnch
 } // namespace gr
 
-#endif /* INCLUDED_HNCH_PISPISINK_H */
+#endif /* INCLUDED_HNCH_PISPISOURCE_IMPL_H */
 
