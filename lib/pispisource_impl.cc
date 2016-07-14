@@ -171,7 +171,7 @@ namespace gr {
 		if(ret<1)
 		{
             		perror("pispisink: SPI transfer failed");
-			break;
+			throw std::runtime_error("internal error");
 		}
 
         	for(int j = 0; j < samples_to_get; j++) 

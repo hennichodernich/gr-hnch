@@ -197,7 +197,7 @@ namespace gr {
 		if(ret<1)
 		{
             		perror("pispisink: SPI transfer failed");
-			break;
+			throw std::runtime_error("internal error");
 		}
         }
 
