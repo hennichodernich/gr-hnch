@@ -67,7 +67,6 @@ namespace gr {
 	set_output_multiple(d_chunk_size);
 
 	d_buffer = new uint16_t[d_chunk_size * 2];
-	dummybuffer = new uint16_t[d_chunk_size * 2];
 
 	spimode |= (SPI_CPHA);
 	/*
@@ -129,7 +128,9 @@ namespace gr {
 	        throw std::runtime_error("pispisource");
       	}
 
-	transfer_struct.tx_buf = (__u64) dummybuffer;
+	memset(&transfer_struct,0,sizeof(struct spi_ioc_transfer));
+
+	transfer_struct.len = 2 * d_chunk_size * sizeof(uint16_t);
 	transfer_struct.rx_buf = (__u64) d_buffer;
 	transfer_struct.delay_usecs = 0;
 	transfer_struct.speed_hz = speed;
@@ -143,7 +144,6 @@ namespace gr {
     {
 	close(d_fd);
 	delete [] d_buffer;
-	delete [] dummybuffer;
     }
 
     int
@@ -163,9 +163,6 @@ namespace gr {
 
 	while(ntogo > 0) {
 		int samples_to_get = std::min(ntogo, d_chunk_size);
-	       	int bytes_to_get = samples_to_get * 2 * sizeof(uint16_t);
-
-		transfer_struct.len = bytes_to_get;
 
 		ret = ioctl(d_fd, SPI_IOC_MESSAGE(1), &transfer_struct);
 		if(ret<1)

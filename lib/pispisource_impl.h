@@ -32,7 +32,6 @@ namespace gr {
 	int		d_bus_num, d_device_num;
 	int         	d_fd;
       	uint16_t	*d_buffer;
-      	uint16_t	*dummybuffer;
       	int		d_chunk_size;
 	
 	struct spi_ioc_transfer transfer_struct;
