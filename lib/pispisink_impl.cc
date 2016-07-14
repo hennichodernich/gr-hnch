@@ -131,6 +131,8 @@ namespace gr {
 	        throw std::runtime_error("pispisink");
       	}
 
+	memset(&transfer_struct,0,sizeof(struct spi_ioc_transfer));
+
 	transfer_struct.len = 2 * d_chunk_size * sizeof(uint32_t);
 	transfer_struct.tx_buf = (__u64) d_buffer;
 	transfer_struct.rx_buf = (__u64) dummybuffer;
