@@ -12,6 +12,7 @@
 #include "hnch/vec_mat_mult_cc.h"
 #include "hnch/pispisink.h"
 #include "hnch/pispisource.h"
+#include "hnch/chancoding_bsc_bb.h"
 %}
 
 
@@ -23,3 +24,5 @@ GR_SWIG_BLOCK_MAGIC2(hnch, vec_mat_mult_cc);
 GR_SWIG_BLOCK_MAGIC2(hnch, pispisink);
 %include "hnch/pispisource.h"
 GR_SWIG_BLOCK_MAGIC2(hnch, pispisource);
+%include "hnch/chancoding_bsc_bb.h"
+GR_SWIG_BLOCK_MAGIC2(hnch, chancoding_bsc_bb);

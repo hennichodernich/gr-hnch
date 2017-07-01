@@ -25,5 +25,6 @@ install(FILES
     simp_vec_map_cc.h
     vec_mat_mult_cc.h
     pispisink.h
-    pispisource.h DESTINATION include/hnch
+    pispisource.h
+    chancoding_bsc_bb.h DESTINATION include/hnch
 )

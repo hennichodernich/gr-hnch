@@ -21,5 +21,6 @@ install(FILES
     hnch_simp_vec_map_cc.xml
     hnch_vec_mat_mult_cc.xml
     hnch_pispisink.xml
-    hnch_pispisource.xml DESTINATION share/gnuradio/grc/blocks
+    hnch_pispisource.xml
+    hnch_chancoding_bsc_bb.xml DESTINATION share/gnuradio/grc/blocks
 )
