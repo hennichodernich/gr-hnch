@@ -1,0 +1,27 @@
+id: hnch_filtered_msg_pair_to_var
+label: Filtered Message Pair to Var
+category: '[hnch]'
+
+parameters:
+-   id: target
+    label: Variable
+    dtype: string
+    default: 'freq'
+
+-   id: filter
+    label: Name in pair
+    dtype: string
+    default: 'f'
+
+inputs:
+-   domain: message
+    id: inpair
+
+templates:
+    imports: import hnch
+    make: hnch.filtered_msg_pair_to_var(${ 'self.set_' + context.get('target')() }, ${filter})
+  
+documentation: |-
+    This block will take an input message pair and allow you to set a gnuradio variable if the filter criteron is met.
+
+file_format: 1

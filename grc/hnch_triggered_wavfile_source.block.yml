@@ -1,0 +1,49 @@
+id: hnch_triggered_wavfile_source
+label: Triggered WAV File Source
+category: '[hnch]'
+
+parameters:
+-   id: file
+    label: File
+    dtype: file_open
+-   id: retrigger
+    label: Retrigger
+    dtype: enum
+    default: 'True'
+    options: ['True', 'False']
+    option_labels: ['Yes', 'No']
+-   id: nchan
+    label: N Channels
+    dtype: int
+    default: '1'
+    hide: part
+
+inputs:
+-   domain: message
+    id: trigger
+    optional: true
+    
+outputs:
+-   domain: stream
+    dtype: float
+    multiplicity: ${ nchan }
+-   domain: message
+    id: running 
+    optional: true
+
+asserts:
+- ${ 1 <= nchan }
+
+templates:
+    imports: import hnch
+    make: hnch.triggered_wavfile_source(${file}, ${retrigger})
+
+cpp_templates:
+    includes: ['#include <hnch/triggered_wavfile_source.h>']
+    declarations: 'hnch::triggered_wavfile_source::sptr ${id};'
+    make: 'this->${id} = hnch::triggered_wavfile_source::make(${file}, ${retrigger});'
+    translations:
+        'True': 'true'
+        'False': 'false'
+
+file_format: 1

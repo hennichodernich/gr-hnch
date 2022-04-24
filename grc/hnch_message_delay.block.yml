@@ -1,0 +1,34 @@
+id: hnch_message_delay
+label: Message Delay
+category: '[hnch]'
+
+parameters:
+-   id: msg
+    label: Message PMT
+    dtype: raw
+    default: pmt.intern("TEST")
+-   id: delay
+    label: Delay (ms)
+    dtype: real
+    default: '1000'
+
+inputs:
+-   domain: message
+    id: set_msg
+    optional: true
+
+outputs:
+-   domain: message
+    id: strobe
+    optional: true
+
+templates:
+    imports: |-
+        import hnch
+        import pmt
+    make: hnch.message_delay(${msg}, ${delay})
+    callbacks:
+    - set_msg(${msg})
+    - set_delay(${delay})
+
+file_format: 1
