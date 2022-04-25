@@ -79,7 +79,6 @@ templates:
         ${range} = Range(${start}, ${stop}, ${step}, ${value}, ${min_len})
         ${win} = RangeWidget(${range}, self.set_${id}, "${no_quotes(label,repr(id))}", "${widget}", ${rangeType}, ${orient})
         self._${id}_callback = lambda i: Qt.QMetaObject.invokeMethod(self._${id}_win, "setValue", Qt.Q_ARG("int", i))
-        self._${id}_callback(self.${id})
         ${gui_hint() % win}
 
 documentation: |-
