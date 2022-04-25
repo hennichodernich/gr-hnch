@@ -14,6 +14,11 @@ if(NOT PYTHONINTERP_FOUND)
     return()
 endif()
 
+set(PY_QT_IMPORT "from PyQt5 import Qt, QtCore, QtWidgets")
+
+configure_file(range.py.cmakein "${CMAKE_CURRENT_BINARY_DIR}/range.py" @ONLY)
+configure_file(util.py.cmakein "${CMAKE_CURRENT_BINARY_DIR}/util.py" @ONLY)
+
 add_subdirectory(bindings)
 
 ########################################################################
@@ -22,6 +27,8 @@ add_subdirectory(bindings)
 GR_PYTHON_INSTALL(
     FILES
     __init__.py
+    "${CMAKE_CURRENT_BINARY_DIR}/range.py"
+    "${CMAKE_CURRENT_BINARY_DIR}/util.py"
     filtered_msg_pair_to_var.py DESTINATION ${GR_PYTHON_DIR}/hnch
 )
 

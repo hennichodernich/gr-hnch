@@ -20,5 +20,8 @@ except ModuleNotFoundError:
     pass
 
 # import any pure python here
+from .range import Range, RangeWidget
+from . import util
+
 from .filtered_msg_pair_to_var import filtered_msg_pair_to_var
 #
