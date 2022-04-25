@@ -11,7 +11,7 @@ parameters:
 -   id: filter
     label: Name in pair
     dtype: string
-    default: 'f'
+    default: ''
 
 inputs:
 -   domain: message
@@ -22,6 +22,6 @@ templates:
     make: hnch.filtered_msg_pair_to_var(${ 'self.set_' + context.get('target')() }, ${filter})
   
 documentation: |-
-    This block will take an input message pair and allow you to set a gnuradio variable if the filter criteron is met.
+    This block will take an input message pair and allow you to set a gnuradio variable if the filter criteron is met. Leave filter string empty to unconditionally set the variable.
 
 file_format: 1

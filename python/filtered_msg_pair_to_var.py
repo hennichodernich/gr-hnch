@@ -15,7 +15,7 @@ class filtered_msg_pair_to_var(gr.sync_block):
     """
     This block will take an input message pair and allow you to set a flowgraph variable
     via setter callback. The car of the message pair is compared to a filter string, and
-    the variable is only set if the string matches.
+    the variable is only set if the string matches (or if the filter string is empty).
     If the second element the pair is a compound PMT object or not of the datatype 
     expected by the flowgraph the behavior of the flowgraph may be unpredictable.
     """
@@ -33,7 +33,7 @@ class filtered_msg_pair_to_var(gr.sync_block):
             gr.log.warn("Input message %s is not a simple pair, dropping" % repr(msg))
             return
         
-        if pmt.eq(pmt.car(msg), pmt.intern(self.filter)):
+        if not self.filter or pmt.eq(pmt.car(msg), pmt.intern(self.filter)):
             new_val = pmt.to_python(pmt.cdr(msg))
             try:
                 self.callback(new_val)
