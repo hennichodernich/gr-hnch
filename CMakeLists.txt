@@ -70,6 +70,16 @@ ELSE()
     message(WARNING "C standard could not be set because compiler is not GNU, Clang or MSVC.")
 ENDIF()
 
+#############
+#
+#############
+
+find_package(PulseAudio)
+if(NOT PULSEAUDIO_FOUND)
+	message(FATAL_ERROR "PulseAudio not found")
+endif()
+find_library(PULSESIMPLE_LIB pulse-simple)
+
 ########################################################################
 # Install directories
 ########################################################################

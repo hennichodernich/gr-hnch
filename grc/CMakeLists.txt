@@ -11,5 +11,6 @@ install(FILES
     hnch_message_delay.block.yml
     hnch_triggered_wavfile_source.block.yml
     hnch_range.block.yml
-    hnch_filtered_msg_pair_to_var.block.yml DESTINATION share/gnuradio/grc/blocks
+    hnch_filtered_msg_pair_to_var.block.yml
+    hnch_pulseaudio_source.block.yml DESTINATION share/gnuradio/grc/blocks
 )

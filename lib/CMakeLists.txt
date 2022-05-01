@@ -15,6 +15,7 @@ list(APPEND hnch_sources
     message_delay_impl.cc
     triggered_wavfile_source_impl.cc
     wavfile.cc
+    pulseaudio_source_impl.cc
 )
 
 set(hnch_sources "${hnch_sources}" PARENT_SCOPE)
@@ -24,7 +25,10 @@ if(NOT hnch_sources)
 endif(NOT hnch_sources)
 
 add_library(gnuradio-hnch SHARED ${hnch_sources})
-target_link_libraries(gnuradio-hnch gnuradio::gnuradio-runtime)
+target_link_libraries(gnuradio-hnch
+       	gnuradio::gnuradio-runtime
+       	${PULSESIMPLE_LIB})
+
 target_include_directories(gnuradio-hnch
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
     PUBLIC $<INSTALL_INTERFACE:include>

@@ -12,5 +12,6 @@
 install(FILES
     api.h
     message_delay.h
-    triggered_wavfile_source.h DESTINATION include/hnch
+    triggered_wavfile_source.h
+    pulseaudio_source.h DESTINATION include/hnch
 )

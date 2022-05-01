@@ -1,0 +1,47 @@
+id: hnch_pulseaudio_source
+label: PulseAudio Source
+category: '[hnch]'
+
+templates:
+  imports: import hnch
+  make: hnch.pulseaudio_source(${samplingrate}, ${sourcename}, ${outchans}, ${latency_ms})
+
+#  Make one 'parameters' list entry for every parameter you want settable from the GUI.
+#     Keys include:
+#     * id (makes the value accessible as keyname, e.g. in the make entry)
+#     * label (label shown in the GUI)
+#     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
+#     * default
+parameters:
+- id: samplingrate
+  label: Sampling Rate
+  dtype: int
+  default: 48000
+- id: sourcename
+  label: Source Name
+  dtype: string
+  default: ''
+- id: outchans
+  label: Number of output channels
+  dtype: int
+  default: 1
+- id: latency_ms
+  label: Latency in ms
+  dtype: int
+  default: 10
+  
+inputs:
+#- label: ...
+#  domain: ...
+#  dtype: ...
+#  vlen: ...
+#  optional: ...
+
+outputs:
+-   domain: stream
+    dtype: float
+    multiplicity: ${outchans}
+
+#  'file_format' specifies the version of the GRC yml format used in the file
+#  and should usually not be changed.
+file_format: 1
