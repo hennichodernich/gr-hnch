@@ -680,7 +680,7 @@
 #include <pulse/simple.h>
 #include <pulse/error.h>
 
-#define BUFSIZE 65536
+#define BUFSIZE 8192
 
 namespace gr {
   namespace hnch {
