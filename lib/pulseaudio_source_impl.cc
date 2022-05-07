@@ -718,7 +718,7 @@ namespace gr {
         ss.channels = d_inchans;
         ss.rate = samplingrate;
         
-        ba.maxlength = -1;
+        ba.maxlength = 2 * BUFSIZE;
         ba.tlength = -1;
         ba.prebuf = -1;
         ba.minreq = -1;
