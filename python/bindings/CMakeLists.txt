@@ -31,7 +31,8 @@ include(GrPybind)
 list(APPEND hnch_python_files
     triggered_wavfile_source_python.cc
     message_delay_python.cc
-    pulseaudio_source_python.cc python_bindings.cc)
+    pulseaudio_source_python.cc
+    sliding_maximum_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(hnch
    ../..

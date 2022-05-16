@@ -1,0 +1,27 @@
+id: hnch_sliding_maximum
+label: Sliding Maximum
+category: '[hnch]'
+
+templates:
+  imports: import hnch
+  make: hnch.sliding_maximum(${length})
+  callbacks:
+    - set_length(${length})
+
+parameters:
+-   id: length
+    label: Length
+    dtype: int
+    default: '1000'
+inputs:
+-   domain: stream
+    dtype: float
+    vlen: 1
+outputs:
+-   domain: stream
+    dtype: float
+    vlen: 1
+
+#  'file_format' specifies the version of the GRC yml format used in the file
+#  and should usually not be changed.
+file_format: 1

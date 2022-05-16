@@ -24,6 +24,7 @@ namespace py = pybind11;
 void bind_message_delay(py::module& m);
 void bind_triggered_wavfile_source(py::module& m);
 void bind_pulseaudio_source(py::module& m);
+    void bind_sliding_maximum(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -55,5 +56,6 @@ PYBIND11_MODULE(hnch_python, m)
     bind_message_delay(m);
     bind_triggered_wavfile_source(m);
     bind_pulseaudio_source(m);
+    bind_sliding_maximum(m);
     // ) END BINDING_FUNCTION_CALLS
 }
