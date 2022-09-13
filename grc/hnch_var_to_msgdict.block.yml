@@ -1,0 +1,27 @@
+id: hnch_var_to_msgdict
+label: Variable to Message Dict
+category: '[hnch]'
+
+parameters:
+-   id: target
+    label: Variable
+    default: freq
+-   id: msgname
+    label: Message Variable Name
+    dtype: string
+    default: 'freq'
+
+outputs:
+-   domain: message
+    id: msgout
+
+templates:
+    imports: import hnch
+    make: hnch.var_to_msg_dict(${msgname},${target})
+    callbacks:
+    - variable_changed(${target})
+  
+documentation: |-
+    This block will monitor a variable, and when it changes, generate a message dict.
+
+file_format: 1

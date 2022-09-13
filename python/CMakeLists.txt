@@ -29,6 +29,7 @@ GR_PYTHON_INSTALL(
     __init__.py
     "${CMAKE_CURRENT_BINARY_DIR}/range.py"
     "${CMAKE_CURRENT_BINARY_DIR}/util.py"
+    var_to_msgdict.py
     filtered_msg_pair_to_var.py DESTINATION ${GR_PYTHON_DIR}/hnch
 )
 

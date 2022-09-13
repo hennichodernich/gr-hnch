@@ -24,4 +24,5 @@ from .range import Range, RangeWidget
 from . import util
 
 from .filtered_msg_pair_to_var import filtered_msg_pair_to_var
+from .var_to_msgdict import var_to_msg_dict
 #

@@ -14,5 +14,6 @@ install(FILES
     hnch_filtered_msg_pair_to_var.block.yml
     hnch_chooser.block.yml
     hnch_pulseaudio_source.block.yml
+    hnch_var_to_msgdict.block.yml
     hnch_sliding_maximum.block.yml DESTINATION share/gnuradio/grc/blocks
 )
