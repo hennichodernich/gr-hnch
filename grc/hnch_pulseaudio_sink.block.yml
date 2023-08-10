@@ -1,10 +1,10 @@
 id: hnch_pulseaudio_sink
-label: pulseaudio_sink
+label: PulseAudio Sink
 category: '[hnch]'
 
 templates:
   imports: import hnch
-  make: hnch.pulseaudio_sink(${samplingrate}, ${&sinkname}, ${inchans}, ${latency_ms})
+  make: hnch.pulseaudio_sink(${samplingrate}, ${sinkname}, ${inchans}, ${latency_ms})
 
 #  Make one 'parameters' list entry for every parameter you want settable from the GUI.
 #     Keys include:
@@ -18,7 +18,7 @@ parameters:
   dtype: int
   default: 48000
 - id: sinkname
-  label: Source Name
+  label: Sink Name
   dtype: string
   default: ''
 - id: inchans
