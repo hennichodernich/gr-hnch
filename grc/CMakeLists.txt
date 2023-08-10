@@ -15,5 +15,6 @@ install(FILES
     hnch_chooser.block.yml
     hnch_pulseaudio_source.block.yml
     hnch_var_to_msgdict.block.yml
-    hnch_sliding_maximum.block.yml DESTINATION share/gnuradio/grc/blocks
+    hnch_sliding_maximum.block.yml
+    hnch_pulseaudio_sink.block.yml DESTINATION share/gnuradio/grc/blocks
 )

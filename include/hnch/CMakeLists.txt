@@ -14,5 +14,6 @@ install(FILES
     message_delay.h
     triggered_wavfile_source.h
     pulseaudio_source.h
-    sliding_maximum.h DESTINATION include/hnch
+    sliding_maximum.h
+    pulseaudio_sink.h DESTINATION include/hnch
 )

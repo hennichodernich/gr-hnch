@@ -17,6 +17,7 @@ list(APPEND hnch_sources
     wavfile.cc
     pulseaudio_source_impl.cc
     sliding_maximum_impl.cc
+    pulseaudio_sink_impl.cc
 )
 
 set(hnch_sources "${hnch_sources}" PARENT_SCOPE)
