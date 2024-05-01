@@ -746,7 +746,7 @@ namespace gr {
                   &ba,               // Use default buffering attributes.
                   &error
                   );
-        if(s<0){
+        if(!s){
             throw std::runtime_error(pa_strerror(error));
         }
 
