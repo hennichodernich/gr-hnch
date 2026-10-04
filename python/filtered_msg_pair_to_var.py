@@ -30,7 +30,8 @@ class filtered_msg_pair_to_var(gr.sync_block):
 
     def msg_handler(self, msg):
         if not pmt.is_pair(msg) or pmt.is_dict(msg) or pmt.is_pdu(msg):
-            gr.log.warn("Input message %s is not a simple pair, dropping" % repr(msg))
+            self.logger.warn(
+                f"Input message {msg} is not a simple pair, dropping")
             return
         
         if not self.filter or pmt.eq(pmt.car(msg), pmt.intern(self.filter)):
@@ -38,8 +39,8 @@ class filtered_msg_pair_to_var(gr.sync_block):
             try:
                 self.callback(new_val)
             except Exception as e:
-                gr.log.error("Error when calling " + repr(self.callback.name()) + " with "
-                         + repr(new_val) + " (reason: %s)"  % repr(e))
+                self.logger.error(
+                f"Error when calling {self.callback} with {new_val} (reason: {e})")
 
     def stop(self):
         return True
